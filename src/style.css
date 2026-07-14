@@ -24,6 +24,30 @@ body,html {
     background-size: cover;
 }
 
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 2.5%;
+    left: 50%;
+
+    width: 50vmin;
+    height: 15vmin;
+    border-radius: 5vmin;
+
+    backdrop-filter: blur(1.25rem) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0.8vmin 3.2vmin 0 rgba(0, 0, 0, 0.3);
+
+    color: #f9f9fb;
+    font-size: 8vmin;
+    font-weight: 900;
+}
+
 .nasa_app {
     position: absolute;
     display: flex;
@@ -227,9 +251,9 @@ body,html {
     align-items: center;
 
     position: absolute;
-    transform: translate(-50%, 0);
+    transform: translate(-100%, 0);
     top: 2.5%;
-    left: 50%;
+    left: 98.75%;
 
     padding: 1vmin;
     width: 30vmin;
