@@ -7,7 +7,7 @@
 - Search with Google
 - 5 Quick access links
 
-![Screenshot](Assets/Screenshot.png)
+![Screenshot](Assets/screenshot.png)
 
 ## Credits:
 - Louis Coyle for the beautiful background image
