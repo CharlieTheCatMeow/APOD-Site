@@ -1,5 +1,5 @@
 # Meow!
-## A simple new tab page featuring a NASA fact.
+## A simple new tab page featuring a space fact.
 
 ## Features:
 - Displays a fact about space
