@@ -108,7 +108,7 @@ body,html {
 
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 33%;
     left: 50%;
 
     width: 40vmin;
@@ -170,4 +170,72 @@ body,html {
     background-color: rgba(255, 255, 255, 0.08);
     border: none;
     box-shadow: none;
+
+    color: #f9f9fb;
+}
+
+.search_icon {
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    filter: brightness(0) invert(1);
+}
+
+.basic_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 2.5%;
+    left: 50%;
+
+    padding: 1vmin;
+    width: 30vmin;
+    height: 18vmin;
+    border-radius: 3vmin;
+
+    backdrop-filter: blur(1.25rem) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0.8vmin 3.2vmin 0 rgba(0, 0, 0, 0.3);
+}
+
+.temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 3vmin;
+
+    color: #f9f9fb;
+    font-size: 2vmin;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 9vmin;
+
+    color: #f9f9fb;
+    font-size: 8vmin;
+    font-weight: 800;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 4vmin;
+
+    color: #f9f9fb;
+    font-size: 3vmin;
 }

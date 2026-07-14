@@ -29,4 +29,70 @@ function nasaAppInit() {
         });
 }
 
+function weatherInit() {
+    const weatherDisplay = document.querySelector("#temperature");
+    weatherDisplay.innerText = "Loading weather...";
+
+    if (!navigator.geolocation) {
+        weatherDisplay.innerText = "Geolocation not supported";
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            const { latitude, longitude } = position.coords;
+            fetchWeather(latitude, longitude, weatherDisplay);
+        },
+        (error) => {
+            console.error("Error getting location:", error);
+            weatherDisplay.innerText = "Unable to retrieve location";
+        }
+    );
+}
+
+function fetchWeather(lat, lon, weatherDisplay) {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto`;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const temp = Math.round(data.current.temperature_2m);
+
+            weatherDisplay.innerText = `${temp}°C`;
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+            weatherDisplay.innerText = "Error loading weather data.";
+        });
+}
+
+function updateTime(timeDisplay) {
+    const now = new Date()
+    timeDisplay.innerHTML = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: false});
+}
+
+function getDate() {
+    const date = new Date();
+    const weekday = date.toLocaleDateString('en-US', {weekday: 'short'});
+    const month = date.toLocaleDateString('en-US', {month: 'long'});
+    const day = date.getDate();
+    return `${weekday}, ${month} ${day}`;
+}
+
+function updateBasicInfo() {
+    const timeDisplay = document.querySelector("#time");
+    const dateDisplay = document.querySelector("#date");
+    updateTime(timeDisplay);
+    dateDisplay.innerHTML = getDate();
+}
+
+setInterval(updateBasicInfo, 1000);
+setInterval(weatherInit, 60000);
+
+weatherInit();
+
 nasaAppInit();
