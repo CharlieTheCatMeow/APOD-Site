@@ -11,15 +11,15 @@ function nasaAppInit() {
         .then((data) => {
             let media;
             if (data.media_type === "image") {
-                media = `<img class="nasa_image" src="${data.url}" alt="${data.title}">`;
+                media = `<img class="nasa_media" src="${data.url}" alt="${data.title}">`;
             } else if (data.media_type === "video") {
-                media = `<video class="nasa_video" src="${data.url}" controls></video>`;
+                media = `<video class="nasa_media" src="${data.url}" controls></video>`;
             } else if (data.media_type === "youtube") {
-                media = `<iframe class="nasa_youtube" width="560" height="315" src="${data.url}" allowfullscreen></iframe>`;
+                media = `<iframe class="nasa_media" width="560" height="315" src="${data.url}" allowfullscreen></iframe>`;
             }
             nasaApp.innerHTML = `
                 <h2 class="nasa_title">${data.title}</h2>
-                ${media}
+                <div class="nasa_media_container">${media}</div>
                 <p class="nasa_explanation">${data.explanation}</p>
             `;
         })

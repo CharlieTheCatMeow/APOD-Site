@@ -1,13 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meow!</title>
-  </head>
-  <body>
-    <div class="nasa_app" id="nasaApp"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+</head>
+    <body>
+        <div class="desktop">
+            <div class="nasa_app" id="nasaApp"></div>
+            <div class="search_bar_container">
+                <form class="search_bar" action="https://www.google.com/search" method="get" target="_blank">
+                    <label class="search_input_label">
+                        <input type="text" name="q" placeholder="Search Google..." class="search_input" autocomplete="off">
+                    </label>
+                    <button class="search_button" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
 </html>
