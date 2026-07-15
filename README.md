@@ -12,3 +12,6 @@
 ## Credits:
 - Louis Coyle for the beautiful background image
 - NASA for the space facts
+
+
+(AI usage: Some basic questions and CSS debugging)
