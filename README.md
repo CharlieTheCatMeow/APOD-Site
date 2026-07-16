@@ -28,3 +28,6 @@ I wanted to learn more about API's and how to implement them. Since I already sh
 ## Credits:
 - Louis Coyle for the beautiful background image
 - NASA for the space facts
+
+
+(AI usage: Some basic questions and CSS debugging)
